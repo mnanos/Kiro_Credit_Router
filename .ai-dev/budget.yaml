@@ -1,0 +1,5 @@
+monthly_limit: 1000
+estimated_used: 0
+reserved_for_high_value_tasks: 300
+warn_below_remaining: 150
+block_below_remaining: 50

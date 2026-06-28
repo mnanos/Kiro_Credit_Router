@@ -1,0 +1,62 @@
+routing:
+  default: local
+
+credits:
+  monthly_limit: 1000
+  reserved_for_high_value_tasks: 300
+  warn_below_remaining: 150
+  block_below_remaining: 50
+
+estimator:
+  input_tokens_per_credit: 200000
+  output_tokens_per_credit: 50000
+  default_overhead_factor: 1.20
+  prompt_cache_discount: 0.00
+  minimum_credits_per_request: 0.01
+
+model_profiles:
+  local:
+    input_weight: 0.00
+    output_weight: 0.00
+    complexity_multiplier: 0.00
+  efficient:
+    input_weight: 0.70
+    output_weight: 0.70
+    complexity_multiplier: 0.80
+  medium:
+    input_weight: 1.00
+    output_weight: 1.00
+    complexity_multiplier: 1.00
+  strong:
+    input_weight: 1.30
+    output_weight: 1.30
+    complexity_multiplier: 1.30
+  premium:
+    input_weight: 1.80
+    output_weight: 1.80
+    complexity_multiplier: 1.80
+  hybrid-kiro-final:
+    input_weight: 0.90
+    output_weight: 0.90
+    complexity_multiplier: 0.90
+
+task_routing:
+  local_first:
+    - explain_code
+    - search_codebase
+    - summarize_log
+    - test_plan
+    - documentation
+    - patch_validation
+  hybrid:
+    - impact_analysis
+    - migration_review
+    - security_review
+    - spec_implementation
+  kiro_preferred:
+    - complex_refactor
+
+data_policy:
+  restricted_data_route: local
+  external_saas_requires_approval: true
+  redact_before_external: true
