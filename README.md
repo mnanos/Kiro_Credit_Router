@@ -44,7 +44,14 @@ tests/
 
 ## Setup
 
-From the project root:
+### Development Setup
+From the project root, you can run the comprehensive setup script:
+
+```bash
+./setup.sh
+```
+
+Or configure the virtual environment manually:
 
 ```bash
 python3 -m venv .venv
@@ -52,10 +59,11 @@ source .venv/bin/activate
 pip install -e ".[dev]"
 ```
 
-Or use the helper script:
+### Installation from ZIP Package
+Alternatively, you can install the package directly using the provided zip file:
 
 ```bash
-bash create_venv_and_install.sh
+pip install kiro_credit_router_project.zip
 ```
 
 ## Usage
